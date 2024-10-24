@@ -1,0 +1,52 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.5'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'java'
+}
+
+group = 'com.jkw'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	/* 기본 설정: Spring Boot 웹 및 테스트 관련 의존성 */
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	/* MySQL 설정: MyBatis와 MySQL 커넥터 */
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.21'
+
+	/* log4jdbc 설정: SQL 로그 추적용 라이브러리 */
+	implementation group: 'org.bgee.log4jdbc-log4j2', name: 'log4jdbc-log4j2-jdbc4.1', version: '1.16'
+
+	/* thymeleaf 설정: 템플릿 엔진 및 레이아웃 다이얼렉트 */
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+
+	/* lombok 설정: 코드 자동 생성 지원 */
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+
+	/* SQL 결과 매핑용: CamelCase 변환에 필요한 Guava */
+	implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+
+	/* Gson 설정: JSON 처리용 라이브러리 */
+	implementation 'com.google.code.gson:gson:2.9.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

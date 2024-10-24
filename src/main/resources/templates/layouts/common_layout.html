@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<!-- Thymeleaf Head Start -->
+	<!-- 레이아웃 타이틀 : 개별페이지 타이틀 형태로 title 구성 -->
+	<title layout:title-pattern="$LAYOUT_TITLE : $CONTENT_TITLE">spring-core</title>
+	<!-- 공통 meta, css, js -->
+	<th:block th:replace="@{/fragments/common/head} :: head"></th:block>
+	<!-- Thymeleaf Head End -->
+</head>
+
+<body>
+	<!-- Thymeleaf Header Start -->
+	<th:block th:replace="@{/fragments/common/header} :: header"></th:block>
+	<!-- Thymeleaf header End -->
+
+	<!-- Page Content Start -->
+	<th:block layout:fragment="content"></th:block>
+	<!-- Page Content End -->
+
+	<!-- Thymeleaf Footer Start -->
+	<th:block th:replace="@{/fragments/common/footer} :: footer"></th:block>
+	<!-- Thymeleaf Footer End -->
+</body>
+
+<!-- Page Script Start -->
+<th:block layout:fragment="script"></th:block>
+<!-- Page Script End -->
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{/layouts/main_layout}">
+<!-- 필요 시 레이아웃 생성 후 교체 -->
+
+<head>
+<title>메인페이지</title>
+</head>
+
+<th:block layout:fragment="content">
+	<div class="container">
+		<div class="card" style="width:20%;">
+			<img src="" class="card-img-top">
+			<div class="card-body">
+				<h5 class="card-title">테스트1</h5>
+				<p class="card-text">테스트입니다.</p>
+				<a href="javascript:" class="btn btn-primary"></a>
+			</div>
+		</div>
+		<div class="card" style="width:20%;">
+			<img src="" class="card-img-top">
+			<div class="card-body">
+				<h5 class="card-title">테스트2</h5>
+				<p class="card-text">테스트입니다.</p>
+				<a href="javascript:" class="btn btn-primary"></a>
+			</div>
+		</div>
+	</div>
+</th:block>
+
+<th:block layout:fragment="script">
+	<script>
+		$(function() {
+			/* 개별 페이지 script 입력 */
+			console.log("[[${list}]]");
+			ajaxTest();
+		})
+
+		function ajaxTest() {
+			$.ajax({
+				url: "/ajaxTest",
+				method: "GET",
+				success: function(data) {
+					console.log("data >>> ", data);
+				}
+			})
+		}
+	</script>
+</th:block>
+
+</html>
