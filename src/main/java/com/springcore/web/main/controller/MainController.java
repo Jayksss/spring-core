@@ -62,4 +62,14 @@ public class MainController {
 		
 		return "content/main";
 	}
+
+	@GetMapping("/login")
+	public String login(Model model) {
+
+		logger.info("MethodName ::: {} ::: Start", Thread.currentThread().getStackTrace()[1].getMethodName());
+
+		logger.info("MethodName ::: {} ::: End", Thread.currentThread().getStackTrace()[1].getMethodName());
+
+		return "content/login";
+	}
 }
