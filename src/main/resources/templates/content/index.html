@@ -41,7 +41,7 @@
 					style="background-image: url(images/slide/slide-1.jpg)">
 					<div class="carousel-container">
 						<div class="container">
-							<h2 class="animate__animated animate__fadeInDown">
+							<h2 class="animate__animated animate__fadeInDown" id="welcomeMessage">
 								Test <span>Test</span>
 <!-- 								Welcome to <span>Green</span> -->
 							</h2>
@@ -216,16 +216,15 @@
 	
 	<script>
 		$(function() {
-			
-			console.log("[[${list}]]");
-			
-			$.ajax({
-				url: "/DB-CONNECT-TEST",
-				method: "GET",
-				success: function(data) {
-					$("#ajaxTest").text(JSON.stringify(data));
-				}
-			})
+			let list = "[[${list}]]";
+			console.log(list);
+
+			let loginId = `[[${loginId}]]`;
+			let userNm = `[[${userNm}]]`;
+			$("#welcomeMessage").text(`${userNm}(${loginId})님 환영합니다!`);
+
+			// <h2 th:text="${userNm} + ' 님 환영합니다!'"></h2>
+			// <h3 th:text="'로그인 ID: ' + ${loginId}"></h3>
 		})
 	</script>
 </th:block>

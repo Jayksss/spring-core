@@ -3,7 +3,7 @@
 <mapper namespace="com.springcore.web.main.mapper.MainMapper">
 
 	<!-- 테스트 쿼리 -->
-	<select id="selectMainInfo" resultType="Map">
+	<select id="selectMainInfo" resultType="java.util.LinkedHashMap">
 		/* MainMapper.selectMainInfo */
 		SELECT
 			LOGIN_ID
