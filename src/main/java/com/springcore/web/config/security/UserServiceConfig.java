@@ -1,4 +1,4 @@
-package com.springcore.web.config;
+package com.springcore.web.config.security;
 
 import com.springcore.web.user.service.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
