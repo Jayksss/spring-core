@@ -1,52 +1,231 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="~{/layouts/main_layout}">
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{/layouts/common_layout}">
 <!-- 필요 시 레이아웃 생성 후 교체 -->
-
 <head>
-<title>메인페이지</title>
+	<title>test index</title>
 </head>
 
 <th:block layout:fragment="content">
-	<div class="container">
-		<div class="card" style="width:20%;">
-			<img src="" class="card-img-top">
-			<div class="card-body">
-				<h5 class="card-title">테스트1</h5>
-				<p class="card-text">테스트입니다.</p>
-				<a href="javascript:" class="btn btn-primary"></a>
+	<!-- ======= Top Bar ======= -->
+	<section id="topbar" class="d-flex align-items-center">
+		<div
+				class="container d-flex justify-content-center justify-content-md-between">
+			<div class="contact-info d-flex align-items-center">
+				<i class="bi bi-envelope-fill"></i><a
+					href="mailto:contact@example.com">info@example.com</a> <i
+					class="bi bi-phone-fill phone-icon"></i> +1 5589 55488 55
+			</div>
+			<div class="social-links d-none d-md-block">
+				<a href="#" class="twitter"><i class="bi bi-twitter"></i></a> <a
+					href="#" class="facebook"><i class="bi bi-facebook"></i></a> <a
+					href="#" class="instagram"><i class="bi bi-instagram"></i></a> <a
+					href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
 			</div>
 		</div>
-		<div class="card" style="width:20%;">
-			<img src="" class="card-img-top">
-			<div class="card-body">
-				<h5 class="card-title">테스트2</h5>
-				<p class="card-text">테스트입니다.</p>
-				<a href="javascript:" class="btn btn-primary"></a>
+	</section>
+
+	<!-- ======= Hero Section ======= -->
+	<section id="hero">
+		<div id="heroCarousel" data-bs-interval="5000"
+			 class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+			<ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+			<div class="carousel-inner" role="listbox">
+
+				<!-- Slide 1 -->
+				<div class="carousel-item active"
+					 style="background-image: url(images/slide/slide-1.jpg)">
+					<div class="carousel-container">
+						<div class="container">
+							<h2 class="animate__animated animate__fadeInDown" id="welcomeMessage">
+								Test <span>Test</span>
+								<!-- 								Welcome to <span>Green</span> -->
+							</h2>
+							<p class="animate__animated animate__fadeInUp">Ut velit est
+								quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat
+								sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.
+								Similique ea voluptatem. Esse doloremque accusamus repellendus
+								deleniti vel. Minus et tempore modi architecto.</p>
+							<a href="#about"
+							   class="btn-get-started animate__animated animate__fadeInUp scrollto">Read
+								More</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide 2 -->
+				<div class="carousel-item"
+					 style="background-image: url(images/slide/slide-2.jpg)">
+					<div class="carousel-container">
+						<div class="container">
+							<h2 class="animate__animated animate__fadeInDown">Lorem
+								Ipsum Dolor</h2>
+							<p class="animate__animated animate__fadeInUp">Ut velit est
+								quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat
+								sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.
+								Similique ea voluptatem. Esse doloremque accusamus repellendus
+								deleniti vel. Minus et tempore modi architecto.</p>
+							<a href="#about"
+							   class="btn-get-started animate__animated animate__fadeInUp scrollto">Read
+								More</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide 3 -->
+				<div class="carousel-item"
+					 style="background-image: url(images/slide/slide-3.jpg)">
+					<div class="carousel-container">
+						<div class="container">
+							<h2 class="animate__animated animate__fadeInDown">Sequi ea
+								ut et est quaerat</h2>
+							<p class="animate__animated animate__fadeInUp">Ut velit est
+								quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat
+								sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.
+								Similique ea voluptatem. Esse doloremque accusamus repellendus
+								deleniti vel. Minus et tempore modi architecto.</p>
+							<a href="#about"
+							   class="btn-get-started animate__animated animate__fadeInUp scrollto">Read
+								More</a>
+						</div>
+					</div>
+				</div>
+
 			</div>
+
+			<a class="carousel-control-prev" href="#heroCarousel" role="button"
+			   data-bs-slide="prev"> <span
+					class="carousel-control-prev-icon bi bi-chevron-left"
+					aria-hidden="true"></span>
+			</a> <a class="carousel-control-next" href="#heroCarousel" role="button"
+					data-bs-slide="next"> <span
+				class="carousel-control-next-icon bi bi-chevron-right"
+				aria-hidden="true"></span>
+		</a>
+
 		</div>
-	</div>
+	</section>
+	<!-- End Hero -->
+
+	<main id="main">
+		<!-- ======= About Us Section ======= -->
+		<section id="about" class="about">
+			<div class="container">
+
+				<div class="section-title">
+					<h2>About Us</h2>
+					<p>Magnam dolores commodi suscipit. Necessitatibus eius
+						consequatur ex aliquid fuga eum quidem. Sit sint consectetur
+						velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit
+						suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem
+						hic quas.</p>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-6 order-1 order-lg-2">
+						<img src="" class="img-fluid" style="width:700px; height:auto;" alt="">
+					</div>
+					<div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+						<h3>DB 데이터 붙이기</h3>
+						<p class="fst-italic" id="ajaxTest">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua.</p>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<!-- End About Us Section -->
+
+		<!-- ======= Why Us Section ======= -->
+		<section id="why-us" class="why-us">
+			<div class="container">
+
+				<div class="row no-gutters">
+
+					<div class="col-lg-4 col-md-6 content-item">
+						<span>01</span>
+						<h4>Lorem Ipsum</h4>
+						<p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et
+							consectetur ducimus vero placeat</p>
+					</div>
+
+					<div class="col-lg-4 col-md-6 content-item">
+						<span>02</span>
+						<h4>Repellat Nihil</h4>
+						<p>Dolorem est fugiat occaecati voluptate velit esse. Dicta
+							veritatis dolor quod et vel dire leno para dest</p>
+					</div>
+
+					<div class="col-lg-4 col-md-6 content-item">
+						<span>03</span>
+						<h4>Ad ad velit qui</h4>
+						<p>Molestiae officiis omnis illo asperiores. Aut doloribus
+							vitae sunt debitis quo vel nam quis</p>
+					</div>
+
+					<div class="col-lg-4 col-md-6 content-item">
+						<span>04</span>
+						<h4>Repellendus molestiae</h4>
+						<p>Inventore quo sint a sint rerum. Distinctio blanditiis
+							deserunt quod soluta quod nam mider lando casa</p>
+					</div>
+
+					<div class="col-lg-4 col-md-6 content-item">
+						<span>05</span>
+						<h4>Sapiente Magnam</h4>
+						<p>Vitae dolorem in deleniti ipsum omnis tempore voluptatem.
+							Qui possimus est repellendus est quibusdam</p>
+					</div>
+
+					<div class="col-lg-4 col-md-6 content-item">
+						<span>06</span>
+						<h4>Facilis Impedit</h4>
+						<p>Quis eum numquam veniam ea voluptatibus voluptas. Excepturi
+							aut nostrum repudiandae voluptatibus corporis sequi</p>
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+		<!-- End Why Us Section -->
+
+	</main>
+	<!-- End #main -->
+
+	<a href="#"
+	   class="back-to-top d-flex align-items-center justify-content-center"><i
+			class="bi bi-arrow-up-short"></i></a>
 </th:block>
 
 <th:block layout:fragment="script">
+	<!-- Vendor JS Files -->
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="vendor/php-email-form/validate.js"></script>
+
+	<!-- Template Main JS File -->
+	<script src="js/main.js"></script>
+
 	<script>
 		$(function() {
-			/* 개별 페이지 script 입력 */
-			console.log("[[${list}]]");
-			ajaxTest();
-		})
+			let list = "[[${list}]]";
+			console.log(list);
 
-		function ajaxTest() {
-			$.ajax({
-				url: "/ajaxTest",
-				method: "GET",
-				success: function(data) {
-					console.log("data >>> ", data);
-				}
-			})
-		}
+			let loginId = `[[${loginId}]]`;
+			let userNm = `[[${userNm}]]`;
+			$("#welcomeMessage").text(`${userNm}(${loginId})님 환영합니다!`);
+
+			// <h2 th:text="${userNm} + ' 님 환영합니다!'"></h2>
+			// <h3 th:text="'로그인 ID: ' + ${loginId}"></h3>
+		})
 	</script>
 </th:block>
 

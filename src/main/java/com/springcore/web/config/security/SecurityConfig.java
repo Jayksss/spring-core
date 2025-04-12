@@ -22,14 +22,14 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/main", "/login").permitAll()
+                .antMatchers("/", "/main", "/login").permitAll()
                 .antMatchers("/static/**", "/css/**", "/js/**", "/images/**", "/fonts/**", "/webjars/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/index", true)
+                .defaultSuccessUrl("/main", true)
                 .permitAll()
                 .and()
                 .logout()

@@ -13,11 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
 @Slf4j
 @Controller
 @RequestMapping("/")
@@ -29,8 +24,8 @@ public class MainController {
 	@Autowired
 	private UserService userService;
 
-	@GetMapping("/index")
-	public String index(Model model) {
+	@GetMapping("/main")
+	public String main(Model model) {
 		
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
@@ -45,22 +40,6 @@ public class MainController {
 
 		model.addAttribute("list", mainService.selectMainInfo());
 		
-		return "content/index";
-	}
-
-	@GetMapping("/main")
-	public String main(Model model) {
-		
-		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
-		Date date = new Date(System.currentTimeMillis());
-		System.out.println(formatter.format(date) + " >>> 메인페이지 연결확인");
-		
-		System.out.println(formatter.format(date) + " >>> 테스트쿼리");
-		List<Map<String, Object>> list = mainService.selectMainInfo();
-		log.info("결과 >>> {}", list);
-		
-		model.addAttribute("list", list);
-		
 		return "content/main";
 	}
 
@@ -73,6 +52,6 @@ public class MainController {
 
 	@PostMapping("/login")
 	public String login() {
-		return "redirect:/index";  // Spring Security에서 처리하므로 보통 필요 없음
+		return "redirect:/main";  // Spring Security에서 처리하므로 보통 필요 없음
 	}
 }
